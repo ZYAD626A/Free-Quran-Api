@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet(helmetOptions));
 app.use(cors(corsOptions));
 app.use(logger);
-app.get("/", require("./routes/healthz.route"));
+app.get("/healthz", require("./routes/healthz.route"));
 app.use("/islam/api", limiter);
 app.use("/islam/api/quran", require("./routes/quran.route"));
 app.use("/islam/api/details", require("./routes/details.route"));
