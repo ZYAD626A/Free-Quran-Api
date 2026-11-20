@@ -24,6 +24,12 @@ app.use(
   }),
 );
 app.use(logger);
+app.get("/healthz", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "Server is healthy",
+  });
+});
 app.use("/islam/api", limiter);
 app.use("/islam/api/quran", require("./routes/quran.route"));
 app.use("/islam/api/details", require("./routes/details.route"));
