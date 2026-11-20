@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const quranController = require("../controllers/details.controller");
 
-router.get("/allahNames", quranController.getAllahNames);
-router.get("/mohamed-names", quranController.getAllahMohamedNames);
-router.get("/azkar", quranController.getAllahZkar);
+const detailsController = require("../controllers/details.controller");
+
+router.get("/allah-names", detailsController.getAllahNames);
+router.get("/prophet-names", detailsController.getProphetNames);
+router.get("/azkar", detailsController.getAzkar);
 
 module.exports = router;
